@@ -1,10 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
-            v-model="drawer"
-            app
-            clipped
-    >
+    <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
         <v-list-item link>
           <v-list-item-action>
@@ -25,15 +21,15 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar
-            app
-            clipped-left
-    >
+    <v-app-bar app clipped-left>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
 
-    <ThreeTest />
+    <v-content>
+      <HelloWorld />
+      <ThreeTest />
+    </v-content>
 
     <v-footer app>
       <span>&copy; 2020</span>
@@ -42,20 +38,23 @@
 </template>
 
 <script>
-  import ThreeTest from "./components/ThreeTest";
-  export default {
-    name: 'App',
-    components: {
-      ThreeTest,
-    },
-    props: {
-      source: String,
-    },
-    data: () => ({
-      drawer: null,
-    }),
-    created () {
-      this.$vuetify.theme.dark = true
-    },
-  }
+import ThreeTest from "./components/ThreeTest";
+// import HelloWorld from "./components/HelloWorld";
+
+export default {
+  name: "App",
+  components: {
+    ThreeTest,
+    // HelloWorld,
+  },
+  props: {
+    source: String,
+  },
+  data: () => ({
+    drawer: null,
+  }),
+  created() {
+    this.$vuetify.theme.dark = true;
+  },
+};
 </script>
