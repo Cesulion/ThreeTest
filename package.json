@@ -13,7 +13,7 @@
     "node-sass": "^4.14.1",
     "three": "^0.117.1",
     "vue": "^2.6.11",
-    "vuetify": "^2.2.11"
+    "vuetify": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
